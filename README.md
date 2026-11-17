@@ -1,42 +1,38 @@
-# Future Interns Cybersecurity Task 2
+# Future Interns Cyber Security — Task 2
 ## Phishing Email Detection & Awareness System
 
-This repository documents the investigation of three unsolicited email samples, the identification of phishing indicators, email-header observations, risk classifications and practical employee-awareness guidance.
+This project documents the investigation of three unsolicited email samples from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) dataset. The work examines sender identity, message content, link destinations and the authentication information retained in each sample. The investigation also develops practical phishing-awareness guidance for employees.
 
-## Dataset and source samples
+## Project findings
 
-All three samples are from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) repository. The original messages are linked from each analysis file; the raw `.eml` files are not republished here.
+| Sample | Email theme | Assessment |
+|---|---|---|
+| 01 | Google-style cloud-account and device-security alert | **Phishing** |
+| 02 | SiriusXM payment failure and subscription renewal | **Phishing** |
+| 03 | Type 2 diabetes treatment promotion | **Suspicious** |
 
-| Sample | Description | Preliminary classification | Analysis |
-|---|---|---|---|
-| 01 | Google / cloud-account security and subscription alert | Phishing | [Sample 01](analysis/sample-01.md) |
-| 02 | SiriusXM payment-failure and renewal alert | Phishing | [Sample 02](analysis/sample-02.md) |
-| 03 | Diabetes-treatment promotion | Suspicious | [Sample 03](analysis/sample-03.md) |
+The classifications and supporting rationale are recorded in the individual analysis files.
 
-Classifications are based on the supplied source content and may be updated if further evidence changes the assessment.
+- [Sample 01 — Google / cloud-account alert](analysis/sample-01.md)
+- [Sample 02 — SiriusXM payment-failure email](analysis/sample-02.md)
+- [Sample 03 — Diabetes-treatment promotion](analysis/sample-03.md)
 
-## Objectives
+## Investigation method
 
-- Inspect sender identity, subject, message body and requested actions.
-- Identify brand impersonation, urgency, fear-based language and suspicious links.
-- Inspect link destinations statically without visiting them.
-- Review the available SPF, DKIM and DMARC information.
-- Classify messages as Safe, Suspicious or Phishing.
-- Explain potential business impact and recommended recipient action.
-- Produce an employee phishing-awareness guide and a professional report.
+The three source messages were reviewed in raw-text form. The investigation recorded the sender and subject fields, examined the main message content, compared the claimed organisation with the sender domain, and inspected HTML link destinations without opening them. The supplied MIME content was also reviewed for conventional named file attachments.
 
-## Tools and methods
+The source corpus retains some authentication results but does not preserve the complete mail-routing path. SPF, DKIM and DMARC are therefore reported only where the supplied headers contain an explicit result. Google Admin Toolbox Messageheader and MXToolbox analysis is recorded separately from the source-header observations.
 
-- Raw text view of the original `.eml` samples in the public dataset.
-- Google Admin Toolbox Messageheader Analyzer.
-- MXToolbox Email Header Analyzer.
-- Static inspection of HTML `href` destinations.
-- Microsoft Word / PDF for client-ready documentation.
-- GitHub for project documentation and evidence.
+## Tools and resources
 
-Header-analyser results are pending until the tools have been run and their actual outputs captured. The source corpus does not preserve all transport-routing headers, so complete route reconstruction may not be possible.
+- [cw-l/message-corpus](https://github.com/cw-l/message-corpus) — source email samples
+- [Google Admin Toolbox Messageheader Analyzer](https://toolbox.googleapps.com/apps/messageheader/analyzeheader)
+- [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
+- Browser raw-text and HTML-source inspection
+- Microsoft Word / PDF — report and awareness document
+- GitHub — source references, analysis and evidence
 
-## Project structure
+## Repository structure
 
 ```text
 FUTURE_CS_02/
@@ -56,37 +52,21 @@ FUTURE_CS_02/
     └── phishing-detection-awareness-report.md
 ```
 
-## Investigation workflow
+## Evidence and scope
 
-1. Identify the source sample and preserve its original source link.
-2. Review sender information, available headers, subject and message body.
-3. Inspect HTML link destinations statically; do not visit suspicious URLs.
-4. Check whether named file attachments are actually present.
-5. Submit only the available header section to the header-analysis tools and record actual results or errors.
-6. Document evidence, limitations, classification, impact and recommended action.
-7. Develop employee-awareness guidance and consolidate the findings into a PDF report.
+The repository links to the original dataset records and contains investigation notes and selected screenshots rather than copies of the original email files. Published screenshots use redacted recipient information and omit message-specific tracking values and credential-like strings. URLs are recorded in defanged form. The link review was static; suspicious destinations were not opened.
 
-## Evidence and privacy
+The source files contain limited routing information. In particular, complete `Received` and `Return-Path` details are unavailable in this corpus. Absence of a field is treated as unavailable evidence, not as an authentication failure.
 
-See [evidence/evidence-log.md](evidence/evidence-log.md) for screenshot status and required captures.
+## Current project status
 
-- Do not upload original `.eml` files.
-- Redact recipient addresses, personal information and message-specific tracking values.
-- Do not publish apparent usernames, passwords, tokens or other credentials embedded in the samples.
-- Keep suspicious URLs defanged (for example, `hxxps://example[.]com`).
-- Do not visit suspicious destinations.
-- Do not claim a header field failed authentication when the result is simply absent.
-- Distinguish observations from assumptions and potential impact from actual outcomes.
+The repository structure, source selection and initial content investigations for all three samples are documented. Sample 01 has sender/header evidence and a main-body/primary-link capture in its evidence folder. The earlier secondary footer-link captures and screenshots of unrelated concatenated MIME fragments are excluded from the published evidence set.
 
-## Current status
-
-Stages 1–3 (repository setup, source selection and initial content investigation) are documented for all three samples. Sample 01 screenshots have been supplied, but some need to be recaptured because they show unrelated embedded MIME fragments or footer links rather than the primary message body and main call-to-action. Sample 02 and Sample 03 screenshots are still to be added.
-
-Stage 4 (Google Admin Toolbox and MXToolbox), the final awareness guide and final report remain to be completed.
+Sample 02 and Sample 03 content investigations are documented; their screenshot evidence has not yet been added. Google Admin Toolbox and MXToolbox results are also outstanding. The employee-awareness guide is drafted, and the final report is being developed from the sample findings.
 
 ## References
 
+- [Future Interns — Cyber Security Task 2](https://futureinterns.com/)
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
 - [Google Admin Toolbox — Messageheader Analyzer](https://toolbox.googleapps.com/apps/messageheader/analyzeheader)
 - [MXToolbox — Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
-- [Future Interns](https://futureinterns.com/)
