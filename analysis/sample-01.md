@@ -59,7 +59,15 @@ The earlier secondary footer-link screenshots were removed from the evidence set
 ## 10. Header-analysis status
 The supplied source records SPF pass for the envelope-sender domain `pispszltq.voaxodovlpu.synrg.co.za`, with sending IP `95.173.180.123`. The visible From address uses `csl.yusoilxyhryni.us`. No DKIM pass or DMARC result is shown in the supplied Authentication-Results. Reply-To, Return-Path and Received routing details are not present in the supplied source.
 
-Google Admin Toolbox Messageheader and MXToolbox outputs have not yet been incorporated into this record.
+### MXToolbox — Email Header Analyzer
+The MXToolbox result was reviewed. Its Authentication-Results row shows:
+- SPF: `pass`
+- SPF envelope-sender domain: `pispszltq.voaxodovlpu.synrg.co.za`
+- SPF sending IP: `95.173.180.123`
+- DKIM: No pass result displayed in the captured row
+- DMARC: No result displayed
+
+The MXToolbox result therefore supports an SPF pass for the envelope-sender domain. It does not authenticate the visible From address as Google. The DKIM and DMARC outcomes remain unreported in the captured result.
 
 ## 11. Limitations
 The recipient is redacted, complete delivery-routing details are unavailable, and the supplied message contains unrelated concatenated MIME content. The destination was not opened or independently confirmed malicious through a live reputation check. Missing authentication fields are recorded as unavailable rather than failed.
