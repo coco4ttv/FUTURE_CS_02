@@ -11,7 +11,7 @@ This project reviews three unsolicited email samples from the public `cw-l/messa
 
 The current assessment classifies Sample 01 (Google-style cloud/device-security alert) and Sample 02 (SiriusXM payment-failure message) as **Phishing**. Sample 03 (diabetes-treatment promotion) is classified as **Suspicious**, because its sensational health claims and promotional links are concerning but the supplied message does not establish credential harvesting, payment diversion or malware delivery.
 
-The source corpus removes or does not retain complete routing information, including `Received` and `Return-Path` fields. Header-tool analysis using Google Admin Toolbox and MXToolbox remains outstanding and is not represented as completed.
+The source corpus removes or does not retain complete routing information, including `Received` and `Return-Path` fields. MXToolbox Email Header Analyzer was used for all three samples. Its results are included in the sample findings. The source corpus does not preserve complete routing information.
 
 ## 2. Objectives
 
@@ -31,11 +31,9 @@ Three source records were reviewed in raw-text form. The original messages remai
 
 Link destinations were inspected statically in defanged form. No suspicious destination was opened. Conventional named file attachments were not identified in the inspected main message sections.
 
-**Tools selected for header analysis:**
-- [Google Admin Toolbox Messageheader Analyzer](https://toolbox.googleapps.com/apps/messageheader/analyzeheader)
-- [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
+**Header-analysis tool used:** [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
 
-The source-header observations below are taken from the supplied `Authentication-Results` fields. Results from the two external header-analysis tools have not yet been incorporated.
+MXToolbox was used to review the available headers for all three samples. The reported SPF and DKIM results are recorded in the corresponding sample sections. The supplied dataset does not contain the complete original delivery-routing information.
 
 ## 4. Sample findings
 
@@ -102,7 +100,7 @@ A passing SPF or DKIM result is not, by itself, proof that a message is legitima
 
 ## 7. Evidence and limitations
 
-The repository includes source references and selected Sample 01 sender/header and main-body/primary-link screenshots. Sample 02 and Sample 03 screenshot evidence has not yet been added. Google Admin Toolbox and MXToolbox outputs remain outstanding.
+The repository includes source references and selected Sample 01 sender/header and main-body/primary-link screenshots. MXToolbox header analysis has been completed for all three samples. Sample 02 and Sample 03 email-content screenshots, together with the MXToolbox result screenshots, still need to be added to the repository.
 
 The source corpus does not preserve a complete mail-routing chain; in particular, `Received` and `Return-Path` information is unavailable. DMARC results are not shown in the supplied authentication fields. The absence of a result is not treated as a failed check.
 
@@ -117,6 +115,5 @@ The investigation demonstrates why message content, sender identity, link contex
 ## 9. References
 
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
-- [Google Admin Toolbox Messageheader Analyzer](https://toolbox.googleapps.com/apps/messageheader/analyzeheader)
 - [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
 - [Future Interns](https://futureinterns.com/)
