@@ -51,7 +51,16 @@ Sample-specific screenshots have not yet been added to the repository. The sourc
 ## 9. Header observations
 The supplied Authentication-Results record SPF pass for envelope domain `courui.aventrox.my.id`, with sending IP `178.214.223.204`. DKIM pass is recorded for `hotiaczu.courui.aventrox.my.id`. No DMARC result is shown. Reply-To, Return-Path and Received routing details are not present in the supplied source. The source also includes `X-Originating-IP: 178.214.223.204`.
 
-Google Admin Toolbox Messageheader and MXToolbox outputs have not yet been incorporated into this record.
+### MXToolbox — Email Header Analyzer
+The MXToolbox result was reviewed. Its Authentication-Results row shows:
+- SPF: `pass`
+- SPF envelope-sender domain: `courui.aventrox.my.id`
+- SPF sending IP: `178.214.223.204`
+- DKIM: `pass`
+- DKIM signing domain: `hotiaczu.courui.aventrox.my.id`
+- DMARC: No result displayed
+
+Both SPF and DKIM pass for the sending domains shown. These results do not validate the medical claims or establish that the sender is a recognised healthcare provider.
 
 ## 10. Limitations
 The recipient is redacted and complete delivery-routing details are unavailable. The destination URLs were not opened or independently confirmed malicious. The investigation does not assess whether the advertised medical claims are scientifically valid. A passing SPF or DKIM result authenticates the relevant sending domain/signature; it does not establish that the content or offer is trustworthy.
