@@ -52,7 +52,16 @@ Sample-specific screenshots have not yet been added to the repository. The sourc
 ## 9. Header observations
 The supplied Authentication-Results record SPF pass for envelope domain `aroke.hugunenav.biz`, with sending IP `129.121.93.85`. DKIM pass is recorded for `btjgbfyk.aroke.hugunenav.biz`. The visible From address uses that subdomain, while the SPF envelope domain is its parent domain. No DMARC result is shown. Reply-To, Return-Path and Received routing details are not present in the supplied source. The source also includes `X-Originating-IP: 129.121.93.85`.
 
-Google Admin Toolbox Messageheader and MXToolbox outputs have not yet been incorporated into this record.
+### MXToolbox — Email Header Analyzer
+The MXToolbox result was reviewed. Its Authentication-Results row shows:
+- SPF: `pass`
+- SPF envelope-sender domain: `aroke.hugunenav.biz`
+- SPF sending IP: `129.121.93.85`
+- DKIM: `pass`
+- DKIM signing domain: `btjgbfyk.aroke.hugunenav.biz`
+- DMARC: No result displayed
+
+Both SPF and DKIM pass for the sending infrastructure shown. These results do not establish that the message was sent by SiriusXM.
 
 ## 10. Limitations
 The recipient is redacted and complete delivery-routing details are unavailable. The destination was not opened or independently confirmed malicious through a live reputation check. A passing SPF or DKIM result authenticates the relevant sending domain/signature; it does not establish that the message genuinely comes from SiriusXM.
