@@ -21,12 +21,11 @@ The classifications and supporting rationale are recorded in the individual anal
 
 The three source messages were reviewed in raw-text form. The investigation recorded the sender and subject fields, examined the main message content, compared the claimed organisation with the sender domain, and inspected HTML link destinations without opening them. The supplied MIME content was also reviewed for conventional named file attachments.
 
-The source corpus retains some authentication results but does not preserve the complete mail-routing path. SPF, DKIM and DMARC are therefore reported only where the supplied headers contain an explicit result. Google Admin Toolbox Messageheader and MXToolbox analysis is recorded separately from the source-header observations.
+The source corpus retains some authentication results but does not preserve the complete mail-routing path. SPF, DKIM and DMARC are therefore reported only where the supplied headers contain an explicit result. MXToolbox Email Header Analyzer was used to review the available headers for all three samples. The authentication values below agree with the supplied source-header fields.
 
 ## Tools and resources
 
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus) — source email samples
-- [Google Admin Toolbox Messageheader Analyzer](https://toolbox.googleapps.com/apps/messageheader/analyzeheader)
 - [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
 - Browser raw-text and HTML-source inspection
 - Microsoft Word / PDF — report and awareness document
@@ -62,11 +61,10 @@ The source files contain limited routing information. In particular, complete `R
 
 The repository structure, source selection and initial content investigations for all three samples are documented. Sample 01 has sender/header evidence and a main-body/primary-link capture in its evidence folder. The earlier secondary footer-link captures and screenshots of unrelated concatenated MIME fragments are excluded from the published evidence set.
 
-Sample 02 and Sample 03 content investigations are documented; their screenshot evidence has not yet been added. Google Admin Toolbox and MXToolbox results are also outstanding. The employee-awareness guide is drafted, and the final report is being developed from the sample findings.
+Sample 02 and Sample 03 content investigations are documented. MXToolbox header analysis has been completed for all three samples; the result screenshots still need to be added to the repository. Sample 02 and Sample 03 email-content screenshots are also outstanding. The employee-awareness guide is drafted, and the final report is being developed from the sample findings.
 
 ## References
 
 - [Future Interns — Cyber Security Task 2](https://futureinterns.com/)
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
-- [Google Admin Toolbox — Messageheader Analyzer](https://toolbox.googleapps.com/apps/messageheader/analyzeheader)
 - [MXToolbox — Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
