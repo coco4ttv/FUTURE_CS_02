@@ -53,15 +53,13 @@ FUTURE_CS_02/
 
 ## Evidence and scope
 
-The repository links to the original dataset records and contains investigation notes and selected screenshots rather than copies of the original email files. Published screenshots use redacted recipient information and omit message-specific tracking values and credential-like strings. URLs are recorded in defanged form. The link review was static; suspicious destinations were not opened.
+The repository links to the original dataset records and contains the investigation notes and selected evidence screenshots. The sample messages are drawn from a public corpus released under the MIT License; the project credits the dataset and links to each original record. The corpus README describes the messages as real-world samples with contributor information redacted and URLs defanged. The link review in this project was static; suspicious destinations were not opened.
 
 The source files contain limited routing information. In particular, complete `Received` and `Return-Path` details are unavailable in this corpus. Absence of a field is treated as unavailable evidence, not as an authentication failure.
 
 ## Current project status
 
-The repository structure, source selection and initial content investigations for all three samples are documented. Sample 01 has sender/header evidence and a main-body/primary-link capture in its evidence folder. The earlier secondary footer-link captures and screenshots of unrelated concatenated MIME fragments are excluded from the published evidence set.
-
-Sample 02 and Sample 03 content investigations are documented. MXToolbox header analysis has been completed for all three samples; the result screenshots still need to be added to the repository. Sample 02 and Sample 03 email-content screenshots are also outstanding. The employee-awareness guide is drafted, and the final report is being developed from the sample findings.
+The source selection and content investigations for all three samples are documented. The Sample 01 evidence folder contains sender/header and main-body/primary-link screenshots. MXToolbox header analysis has been completed for all three samples, with the SPF/DKIM observations recorded in the corresponding analysis files. Sample 02 and Sample 03 email-content screenshots, along with the MXToolbox result images, are not yet included in the repository. The employee-awareness guide is drafted, and the final report is being developed from the sample findings.
 
 ## References
 
