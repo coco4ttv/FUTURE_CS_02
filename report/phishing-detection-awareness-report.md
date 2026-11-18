@@ -100,7 +100,7 @@ A passing SPF or DKIM result is not, by itself, proof that a message is legitima
 
 ## 7. Evidence and limitations
 
-The repository includes source references and selected Sample 01 sender/header and main-body/primary-link screenshots. MXToolbox header analysis has been completed for all three samples. Sample 02 and Sample 03 email-content screenshots, together with the MXToolbox result screenshots, still need to be added to the repository.
+The repository includes source references and Sample 01 and Sample 02 investigation screenshots. MXToolbox header analysis has been completed for all three samples and the SPF/DKIM results are recorded in the sample findings. Sample 03 email-content screenshots remain to be added.
 
 The source corpus does not preserve a complete mail-routing chain; in particular, `Received` and `Return-Path` information is unavailable. DMARC results are not shown in the supplied authentication fields. The absence of a result is not treated as a failed check.
 
