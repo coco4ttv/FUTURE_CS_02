@@ -56,7 +56,7 @@ The message uses Google-style branding with a sender domain unrelated to Google,
 
 ## 10. Header analysis — MXToolbox
 
-The headers were reviewed using [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx). The result shows:
+I reviewed the headers using [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx). The result shows:
 
 | Header check | Result | Observed detail |
 |---|---|---|

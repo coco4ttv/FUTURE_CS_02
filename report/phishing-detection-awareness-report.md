@@ -2,12 +2,12 @@
 ## Future Interns Cyber Security Internship — Task 2
 
 **Prepared by:** Samuel Evans-Adeluka  
-**Assessment date:** 18 November 2026  
+**Assessment date:** 13 November 2026  
 **Repository:** [FUTURE_CS_02](https://github.com/coco4ttv/FUTURE_CS_02)
 
 ## 1. Executive summary
 
-This project reviews three unsolicited email samples from the public `cw-l/message-corpus` dataset. The analysis examines sender identity, claimed organisation, message content, requested action, link destinations and the authentication information retained in the source headers.
+I reviewed three unsolicited email samples from the public `cw-l/message-corpus` dataset. I examined sender identity, claimed organisation, message content, requested action, link destinations and the authentication information retained in the source headers.
 
 The current assessment classifies Sample 01 (Google-style cloud/device-security alert) and Sample 02 (SiriusXM payment-failure message) as **Phishing**. Sample 03 (diabetes-treatment promotion) is classified as **Suspicious**, because its sensational health claims and promotional links are concerning but the supplied message does not establish credential harvesting, payment diversion or malware delivery.
 
@@ -92,17 +92,43 @@ Full analysis: [analysis/sample-03.md](../analysis/sample-03.md)
 
 A passing SPF or DKIM result is not, by itself, proof that a message is legitimate. The visible sender identity, claimed organisation, content and authentication alignment must be considered together.
 
-## 6. Recommendations
+## 6. How the attacks work — simple explanation
 
-- Verify account, payment and security alerts through the organisation's known official website or contact channel.
-- Treat unexpected deadlines and threats of account closure as reasons to pause and verify.
-- Check the full sender address rather than relying on display names or logos.
-- Inspect link destinations and be cautious when they do not match the claimed organisation.
-- Never provide passwords, one-time passcodes or payment details through an unexpected email link.
-- Report suspicious emails through the organisation's approved security process.
-- Provide recurring employee awareness training using realistic examples and clear reporting guidance.
+The three emails use different stories, but each tries to influence the recipient into taking an action before checking whether the message is genuine.
 
-## 7. Evidence and limitations
+### Sample 01 — Google / cloud account alert
+
+The sender uses Google-style branding and a Support Team identity to make the email look familiar. It then warns about account or device problems and adds a deadline to create pressure. The aim is to make the recipient worry that access, files or a subscription are at risk and follow the links or renewal request without checking the sender first. The evidence shows an unexpected sender domain and hosted links. I did not open the links, so I cannot confirm what the pages would have asked the recipient to do.
+
+### Sample 02 — SiriusXM payment-failure email
+
+The email claims that a SiriusXM payment has failed and that the subscription will be removed unless the recipient updates payment details. This creates concern about losing a service and encourages the recipient to use the payment link in the message. A recipient who trusts the message could be taken to a page and persuaded to enter payment or account information. The sender domain does not match an evident SiriusXM domain, and the payment link uses a hosted Google Cloud Storage address. I did not open the destination, so the investigation does not establish what information the page collected or whether any information was stolen.
+
+### Sample 03 — Diabetes-treatment promotion
+
+This email uses a different approach. Instead of pretending to be an account provider, it makes dramatic health claims and promises a very quick result. It also mentions serious complications to make the reader feel worried and more likely to click the promotional link. The email provides no research citation to support its claims. The supplied evidence supports a suspicious health promotion, but it does not prove that the link delivered malware or collected credentials.
+
+### What the examples have in common
+
+In simple terms, the sender gives the recipient a reason to react — fear of losing an account, concern about a payment, or hope of a quick health improvement — and then encourages them to click a link or take another action. The risk arises when the recipient trusts the story without checking it independently. The final destination and any activity after a click were not tested in this investigation.
+
+## 7. Prevention tips for users
+
+The following steps help employees recognise suspicious messages and avoid acting on them.
+
+1. **Pause before reacting.** Be careful with unexpected warnings, urgent deadlines, threats of account closure, payment problems and offers that promise unusually quick results.
+2. **Check the full sender address.** Do not rely on the display name, logo or sign-off. Look at the domain after the `@` symbol and consider whether it matches the organisation the email claims to represent.
+3. **Go to the organisation directly.** For account, security or payment messages, open the official app or type the organisation's known website address yourself. Check the account there instead of using the email's link.
+4. **Verify unexpected requests separately.** Contact the organisation using a phone number or contact method from its official website, card or previous trusted correspondence — not details supplied only in the suspicious email.
+5. **Do not share sensitive information through unexpected links.** Do not enter passwords, one-time passcodes, banking details or payment-card information because an email asks you to.
+6. **Treat links and attachments carefully.** Check where a link is supposed to lead without opening it. Do not open unexpected attachments or download files when the sender or purpose is unclear.
+7. **Check surprising health and financial claims.** Do not rely on an unsolicited email for medical or financial decisions. Confirm health information with a qualified healthcare professional and use reputable, independent sources.
+8. **Report the message.** Use your organisation's phishing-reporting option or contact its IT/security team. Reporting helps the organisation check whether other employees received the same message.
+9. **Act quickly if you have interacted with it.** Tell IT/security what happened. If you entered a password, change it through the genuine service's website and follow your organisation's response process. If you supplied card or bank details, contact your bank using its official contact details.
+
+These precautions reduce the chance of account compromise, payment loss and exposure to misleading or harmful content. They also give employees a clear process: pause, check independently, avoid sharing sensitive details and report suspicious messages.
+
+## 8. Evidence and limitations
 
 I saved the sender/header, message-content, link and MXToolbox screenshots for all three samples in their respective evidence folders. I recorded the results from all three MXToolbox header reviews in the sample findings. The evidence register links each capture to the corresponding investigation.
 
@@ -110,13 +136,13 @@ The source corpus does not preserve a complete mail-routing chain; in particular
 
 The embedded links were reviewed from the raw message sources and were not opened. No live destination reputation check, credential theft, financial loss or malware execution is claimed. Samples 01 and 02 each contain unrelated concatenated or hidden MIME/HTML content. These fragments are documented as source-content anomalies and are not treated as part of the main visible lure in either message.
 
-## 8. Conclusion
+## 9. Conclusion
 
 The three samples demonstrate different social-engineering approaches: impersonation and fear-based account warnings, payment pressure, and exaggerated health-product promotion. Two samples have sufficient indicators for a phishing classification, while the third is more appropriately recorded as suspicious on the available evidence.
 
 I found that the sender identity, message content, link context and authentication results need to be considered together. My final assessments are Phishing for Samples 01 and 02, and Suspicious for Sample 03. I documented the full MIME/HTML review for Sample 02 and included the Sample 03 screenshots and header findings in the repository.
 
-## 9. References
+## 10. References
 
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
 - [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)

@@ -29,3 +29,13 @@ Phishing is a social-engineering attack in which an attacker impersonates a trus
 
 ## Remember
 A legitimate-looking logo, HTTPS padlock or familiar name does not prove an email is safe. Verify the request and the sender through a trusted channel.
+
+## Examples from email investigations
+
+The examples below show different approaches used in phishing and suspicious email campaigns:
+
+- **Account-security impersonation:** a message used Google-style branding, a device-security warning and a subscription-renewal demand.
+- **Payment pressure:** a message claimed that a SiriusXM payment had failed and threatened account removal unless payment details were updated.
+- **Unsupported health promotion:** a message made dramatic claims about reversing Type 2 diabetes and lowering A1C within three hours, without providing supporting research in the email.
+
+These examples show why employees should check the sender address, the purpose of the message, the requested action and the destination of any link rather than relying on branding or authentication results alone.
