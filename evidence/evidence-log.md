@@ -4,7 +4,7 @@
 **Dataset:** [cw-l/message-corpus](https://github.com/cw-l/message-corpus)  
 **Header-analysis tool:** [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
 
-## Sample 01 — Google / Cloud Account Alert
+## Sample 01 - Google / Cloud Account Alert
 
 **Source:** [Original email sample](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/00448d97a6dde39113273dd71a4e9c3e60102dbbff5c2af266efc30a60ddbe01.eml)
 
@@ -15,7 +15,7 @@
 | MXToolbox parsed headers | `sample-01/MX Toolbox_output_01.png` | SPF pass recorded; no DKIM or DMARC result displayed |
 | MXToolbox analysed-header summary | `sample-01/MX Toolbox_output_02.png` | Captured; analyser displayed a 0-second relay delay |
 
-## Sample 02 — SiriusXM Payment-Failure Email
+## Sample 02 - SiriusXM Payment-Failure Email
 
 **Source:** [Original email sample](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/03eb531b9a4b525a9247a4ca47c995fb31b2811ef558b33c969547ff653be878.eml)
 
@@ -34,7 +34,7 @@
 | HTML link extraction | [Sample 02 analysis](../analysis/sample-02.md) | Six HTML hyperlinks identified; destinations retained in defanged form and not opened |
 | MIME structure review | [Sample 02 analysis](../analysis/sample-02.md) | Multiple HTML parts, differing charset declarations, hidden objects and unrelated appended message fragments recorded |
 
-## Sample 03 — Diabetes-Treatment Promotion
+## Sample 03 - Diabetes-Treatment Promotion
 
 **Source:** [Original email sample](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/055b7167bba921026083b0a58b437b19458c6b98c28755f6979ccda14b82e4ea.eml)
 
