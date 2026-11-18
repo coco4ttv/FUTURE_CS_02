@@ -20,9 +20,15 @@
 
 | Evidence | File / record | Result |
 |---|---|---|
-| Email content and sender analysis | [Sample 02 analysis](../analysis/sample-02.md) | Investigation documented |
-| MXToolbox header analysis | [Sample 02 analysis](../analysis/sample-02.md) | SPF and DKIM pass; no DMARC result displayed |
-| Sample screenshots | — | Not yet added to this repository |
+| Sender and recipient header | `sample-02/from and to.png` | Captured |
+| Encoded subject inspection | `sample-02/Decoding subject line.png` | Captured |
+| Encoded sender inspection | `sample-02/Decoding of the from email_03.png` | Captured |
+| Email body and payment-failure claim | `sample-02/Body.png` | Captured |
+| Account-style details | `sample-02/information on reciepiants account.png` | Captured; recipient fields redacted |
+| Urgency and payment action | `sample-02/urgency message and link.png` | Captured |
+| Primary link destination | `sample-02/Link.png` | Captured in defanged form |
+| MXToolbox parsed headers | `sample-02/MX Toolbox output.png` | SPF and DKIM pass; DMARC result not displayed |
+| MXToolbox header summary | `sample-02/MX Toolbox output2.png` | Header analysed; no hop-by-hop relay path shown |
 
 ## Sample 03 — Diabetes-Treatment Promotion
 
@@ -36,6 +42,4 @@
 
 ## Evidence summary
 
-The analysis files contain the source details, message indicators, link observations, authentication results, classification and risk rationale for each sample. The evidence directory contains the selected Sample 01 screenshots. Sample 02 and Sample 03 screenshots have not yet been added to the repository.
-
-The source corpus redacts contributor email addresses and defangs message URLs. The investigation preserves those protections and uses the corpus's original sample links for provenance.
+The analysis files contain the source details, message indicators, link observations, authentication results, classification and risk rationale for each sample. Sample 01 and Sample 02 have supporting screenshots in their respective evidence folders. Sample 03 content and header analysis is documented; its screenshot evidence remains to be added.
