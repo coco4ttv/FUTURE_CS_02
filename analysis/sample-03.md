@@ -1,9 +1,9 @@
-# Sample 03 — Diabetes-Treatment Promotion
+# Sample 03 - Diabetes-Treatment Promotion
 
 ## 1. Source details
 - Dataset: [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
 - Original filename: `055b7167bba921026083b0a58b437b19458c6b98c28755f6979ccda14b82e4ea.eml`
-- Original source: [Sample 03 — original email](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/055b7167bba921026083b0a58b437b19458c6b98c28755f6979ccda14b82e4ea.eml)
+- Original source: [Sample 03 - original email](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/055b7167bba921026083b0a58b437b19458c6b98c28755f6979ccda14b82e4ea.eml)
 - Date: Mon, 04 May 2026 21:25:05 +0000
 
 ## 2. Email overview
@@ -57,7 +57,7 @@ I captured and added six Sample 03 screenshots to the repository: sender/recipie
 ## 9. Header observations
 The supplied Authentication-Results record reports SPF pass for envelope domain `courui.aventrox.my.id`, with sending IP `178.214.223.204`. It reports DKIM pass for `hotiaczu.courui.aventrox.my.id`. No DMARC result is shown. The captured headers include `X-Originating-IP: 178.214.223.204`; Reply-To, Return-Path and a complete Received route are not available in the supplied source.
 
-### MXToolbox — Email Header Analyzer
+### MXToolbox - Email Header Analyzer
 I analysed the headers using [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx). The captured output shows:
 - SPF: `pass`
 - SPF envelope-sender domain: `courui.aventrox.my.id`
