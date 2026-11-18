@@ -54,8 +54,6 @@ The message uses Google-style branding with a sender domain unrelated to Google,
 - [`sender_info.png`](../evidence/sample-01/sender_info.png) — sender and available header information.
 - [`main_body_and_link.png`](../evidence/sample-01/main_body_and_link.png) — main Google-style message content and primary device-security link, with message-specific query values obscured.
 
-The earlier secondary footer-link screenshots were removed from the evidence set because they duplicated subordinate links rather than documenting the primary call to action. Earlier body captures showing unrelated concatenated MIME fragments were also excluded from the published evidence set.
-
 ## 10. Header-analysis status
 The supplied source records SPF pass for the envelope-sender domain `pispszltq.voaxodovlpu.synrg.co.za`, with sending IP `95.173.180.123`. The visible From address uses `csl.yusoilxyhryni.us`. No DKIM pass or DMARC result is shown in the supplied Authentication-Results. Reply-To, Return-Path and Received routing details are not present in the supplied source.
 
