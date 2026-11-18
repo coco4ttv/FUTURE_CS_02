@@ -15,7 +15,7 @@ This log records the evidence currently included in the repository and the statu
 | Main Google-style message and primary link | `sample-01/main_body_and_link.png` | Captured; tracking query values obscured |
 | Secondary footer links | — | Excluded from published evidence as they are not the primary call to action |
 | Unrelated concatenated MIME fragments | — | Excluded from published evidence |
-| MXToolbox header analysis | Captured in conversation | SPF pass; DKIM/DMARC results not displayed in the supplied capture |
+| MXToolbox Email Header Analyzer | Captured in conversation | SPF pass; DKIM and DMARC results not displayed in the supplied capture |
 
 ## Sample 02 — SiriusXM Payment-Failure Email
 
@@ -26,7 +26,7 @@ This log records the evidence currently included in the repository and the statu
 | Sender and available headers | — | Not yet captured |
 | Main email body | — | Not yet captured |
 | Primary payment link | — | Not yet captured |
-| MXToolbox header analysis | Captured in conversation | SPF and DKIM pass; DMARC result not displayed |
+| MXToolbox Email Header Analyzer | Captured in conversation | SPF and DKIM pass; DMARC result not displayed |
 
 ## Sample 03 — Diabetes-Treatment Promotion
 
@@ -37,8 +37,8 @@ This log records the evidence currently included in the repository and the statu
 | Sender and available headers | — | Not yet captured |
 | Main email body | — | Not yet captured |
 | Primary promotional link | — | Not yet captured |
-| Google Admin Toolbox result | — | Pending |
-| MXToolbox result | — | Pending |
+| MXToolbox Email Header Analyzer | — | Result reviewed; screenshot supplied in conversation and awaiting repository upload |
+| MXToolbox Email Header Analyzer | — | Result reviewed; screenshot supplied in conversation and awaiting repository upload |
 
 ## Evidence handling and scope
 
