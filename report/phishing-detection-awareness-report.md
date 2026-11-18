@@ -1,8 +1,8 @@
 # Phishing Email Detection & Awareness System
 ## Future Interns Cyber Security Internship — Task 2
 
-**Prepared by:**  
-**Assessment date:** 17 November 2026  
+**Prepared by:** Samuel Evans-Adeluka  
+**Assessment date:** 18 November 2026  
 **Repository:** [FUTURE_CS_02](https://github.com/coco4ttv/FUTURE_CS_02)
 
 ## 1. Executive summary
@@ -11,7 +11,7 @@ This project reviews three unsolicited email samples from the public `cw-l/messa
 
 The current assessment classifies Sample 01 (Google-style cloud/device-security alert) and Sample 02 (SiriusXM payment-failure message) as **Phishing**. Sample 03 (diabetes-treatment promotion) is classified as **Suspicious**, because its sensational health claims and promotional links are concerning but the supplied message does not establish credential harvesting, payment diversion or malware delivery.
 
-The source corpus removes or does not retain complete routing information, including `Received` and `Return-Path` fields. MXToolbox Email Header Analyzer was used for all three samples. Its results are included in the sample findings. The source corpus does not preserve complete routing information.
+I reviewed the three samples using the source material retained in the corpus. Complete `Received` and `Return-Path` routing information was not available. I used MXToolbox Email Header Analyzer for all three samples. I also attempted Google Admin Toolbox Messageheader, but it did not produce a usable result from the supplied corpus headers, so I based the header findings on the MXToolbox output and the authentication fields retained in the source.
 
 ## 2. Objectives
 
@@ -27,13 +27,13 @@ The source corpus removes or does not retain complete routing information, inclu
 
 **Source dataset:** [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
 
-Three source records were reviewed in raw-text form. The original messages remain linked in the corresponding sample analysis files. The investigation covered available sender and subject fields, the main message content, HTML link destinations, List-Unsubscribe information, MIME structure and the authentication results present in the supplied headers.
+I reviewed three source records in raw-text form and linked each original message in its corresponding sample analysis. For each sample, I examined the available sender and subject fields, main message content, HTML link destinations, List-Unsubscribe information, MIME structure and authentication results present in the supplied headers.
 
-Link destinations were inspected statically in defanged form. No suspicious destination was opened. Conventional named file attachments were not identified in the inspected main message sections.
+I inspected link destinations statically in defanged form and did not open suspicious destinations. I did not identify conventional named file attachments in the inspected message sections.
 
 **Header-analysis tool used:** [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
 
-MXToolbox was used to review the available headers for all three samples. The reported SPF and DKIM results are recorded in the corresponding sample sections. The supplied dataset does not contain the complete original delivery-routing information.
+I used MXToolbox to review the available headers for all three samples and recorded the reported SPF and DKIM results in the corresponding sample sections. I attempted Google Admin Toolbox Messageheader as well, but it did not produce a usable analysis from the supplied corpus headers. The dataset does not contain the complete original delivery-routing information.
 
 ## 4. Sample findings
 
@@ -69,11 +69,11 @@ Full analysis: [analysis/sample-02.md](../analysis/sample-02.md)
 
 **Classification: Suspicious — Medium confidence**
 
-The email promotes a “natural” treatment and claims that Type 2 diabetes can be reversed and A1C lowered within three hours. It uses fear-based language about complications and links to a promotional destination hosted under `storage[.]googleapis[.]com`, with additional image and tracking references.
+The email promotes a natural home remedy and claims that Type 2 diabetes can be reversed and A1C lowered in three hours. It uses fear-based wording about complications including nerve damage, blindness and amputations, and invites the recipient to click through to learn the advertised protocol. The captured body provides no study citation or clinical evidence for the claims. The primary link points to a Google Cloud Storage object under `storage[.]googleapis[.]com`; the HTML also references an image hosted at `i[.]imgur[.]com`. The List-Unsubscribe header points to `consigntix[.]com`.
 
-The supplied Authentication-Results record SPF pass for `courui.aventrox.my.id`, with sending IP `178.214.223.204`, and DKIM pass for `hotiaczu.courui.aventrox.my.id`. No DMARC result is shown. Authentication of the sending domain does not validate the health claims or demonstrate that the offer is trustworthy.
+The supplied Authentication-Results record reports SPF pass for `courui.aventrox.my.id`, with sending IP `178.214.223.204`, and DKIM pass for `hotiaczu.courui.aventrox.my.id`. No DMARC result is shown. MXToolbox displays a zero-second relay delay, but the source does not preserve a complete Received route. Authentication of the sending domain does not validate the health claims or demonstrate that the offer is trustworthy.
 
-**Potential impact:** Recipients could be misled into engaging with an untrustworthy health promotion or disclosing personal information.
+**Potential impact:** Recipients could be misled by unsupported health claims, engage with an untrustworthy promotional page or disclose personal or health information.
 
 Full analysis: [analysis/sample-03.md](../analysis/sample-03.md)
 
@@ -104,7 +104,7 @@ A passing SPF or DKIM result is not, by itself, proof that a message is legitima
 
 ## 7. Evidence and limitations
 
-The repository includes source references and Sample 01 and Sample 02 investigation screenshots. MXToolbox header analysis has been completed for all three samples and the SPF/DKIM results are recorded in the sample findings. Sample 03 email-content screenshots remain to be added.
+I saved the sender/header, message-content, link and MXToolbox screenshots for all three samples in their respective evidence folders. I recorded the results from all three MXToolbox header reviews in the sample findings. The evidence register links each capture to the corresponding investigation.
 
 The source corpus does not preserve a complete mail-routing chain; in particular, `Received` and `Return-Path` information is unavailable. DMARC results are not shown in the supplied authentication fields. The absence of a result is not treated as a failed check.
 
@@ -114,7 +114,7 @@ The embedded links were reviewed from the raw message sources and were not opene
 
 The three samples demonstrate different social-engineering approaches: impersonation and fear-based account warnings, payment pressure, and exaggerated health-product promotion. Two samples have sufficient indicators for a phishing classification, while the third is more appropriately recorded as suspicious on the available evidence.
 
-The investigation demonstrates why message content, sender identity, link context and authentication results must be assessed together. MXToolbox header analysis is recorded for all three samples. Sample 02's full MIME/HTML source review is now included in its analysis, while Sample 03's supporting screenshots remain to be added.
+I found that the sender identity, message content, link context and authentication results need to be considered together. My final assessments are Phishing for Samples 01 and 02, and Suspicious for Sample 03. I documented the full MIME/HTML review for Sample 02 and included the Sample 03 screenshots and header findings in the repository.
 
 ## 9. References
 

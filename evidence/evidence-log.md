@@ -12,7 +12,8 @@
 |---|---|---|
 | Sender and available headers | `sample-01/sender_info.png` | Captured |
 | Main message and primary link | `sample-01/main_body_and_link.png` | Captured |
-| MXToolbox header analysis | [Sample 01 analysis](../analysis/sample-01.md) | SPF pass; no DKIM or DMARC result displayed |
+| MXToolbox parsed headers | `sample-01/MX Toolbox_output_01.png` | SPF pass recorded; no DKIM or DMARC result displayed |
+| MXToolbox analysed-header summary | `sample-01/MX Toolbox_output_02.png` | Captured; analyser displayed a 0-second relay delay |
 
 ## Sample 02 — SiriusXM Payment-Failure Email
 
@@ -39,10 +40,14 @@
 
 | Evidence | File / record | Result |
 |---|---|---|
-| Email content and sender analysis | [Sample 03 analysis](../analysis/sample-03.md) | Investigation documented |
-| MXToolbox header analysis | [Sample 03 analysis](../analysis/sample-03.md) | SPF and DKIM pass; no DMARC result displayed |
-| Sample screenshots | — | Not yet added to this repository |
+| Sender, recipient and message headers | `sample-03/From_and_to.png` | Captured |
+| Main body, health claims and call to action | `sample-03/Body_and_urge_to_click_link.png` | Captured |
+| Additional HTML links and remote image | `sample-03/Other_Links.png` | Captured |
+| SPF and DKIM authentication information | `sample-03/SPF_AND_DKIM.png` | SPF pass; DKIM pass; no DMARC result displayed |
+| MXToolbox parsed headers | `sample-03/MX_output_01.png` | Captured |
+| MXToolbox analysed-header summary | `sample-03/MX_Output_02.png` | Captured; displayed relay delay 0 seconds |
+| Full analysis | [Sample 03 analysis](../analysis/sample-03.md) | Body, links, MIME context, header results and risk assessment documented |
 
 ## Evidence summary
 
-The analysis files contain the source details, message indicators, link observations, authentication results, classification and risk rationale for each sample. Sample 01 and Sample 02 have supporting screenshots in their respective evidence folders. Sample 03 content and header analysis is documented; its screenshot evidence remains to be added.
+The analysis files contain my source details, message observations, link findings, authentication results, classifications and risk rationale for all three samples. I saved the sender/header, message-content, link and MXToolbox screenshots in each sample's evidence folder. I used MXToolbox for all three header reviews; Google Admin Toolbox did not produce a usable result from the supplied corpus headers, so no output from that tool is included. The evidence files listed above are present in the repository.

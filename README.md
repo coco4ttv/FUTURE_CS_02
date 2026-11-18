@@ -1,35 +1,37 @@
-# Future Interns Cyber Security — Task 2
+# Future Interns Cyber Security Internship — Task 2
 ## Phishing Email Detection & Awareness System
 
-This project documents an independent investigation of three unsolicited email samples from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) dataset. The corpus maintainers describe it as a collection of real-world, redacted spam, scam and phishing messages intended for security research and awareness training. The work examines sender identity, message content, link destinations and the authentication information retained in each sample, then develops practical phishing-awareness guidance for employees. The corpus does not assign a definitive spam/scam/phishing subtype to each message; the classifications in this project are the analyst's assessments based on the evidence.
+I completed this project as part of the Future Interns Cyber Security Internship. I investigated three unsolicited email samples from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) dataset, assessed their sender identities and content, inspected the links in their HTML source, and reviewed the authentication information available in their headers. I used the findings to prepare individual sample assessments and an employee phishing-awareness guide.
 
-## Project findings
+## My findings
 
-| Sample | Email theme | Assessment |
+| Sample | Email theme | My assessment |
 |---|---|---|
 | 01 | Google-style cloud-account and device-security alert | **Phishing** |
 | 02 | SiriusXM payment failure and subscription renewal | **Phishing** |
 | 03 | Type 2 diabetes treatment promotion | **Suspicious** |
 
-The classifications and supporting rationale are recorded in the individual analysis files.
+I explain the evidence behind each assessment in the individual investigation files:
 
 - [Sample 01 — Google / cloud-account alert](analysis/sample-01.md)
 - [Sample 02 — SiriusXM payment-failure email](analysis/sample-02.md)
 - [Sample 03 — Diabetes-treatment promotion](analysis/sample-03.md)
 
-## Investigation method
+## How I carried out the investigation
 
-The three source messages were reviewed in raw-text form. The investigation recorded the sender and subject fields, examined the main message content, compared the claimed organisation with the sender domain, and inspected HTML link destinations without opening them. The supplied MIME content was also reviewed for conventional named file attachments.
+I reviewed each source message in raw-text form. I recorded the available sender, subject and date fields, examined the main message content, compared the claimed organisation with the sender domain, and inspected the HTML link destinations without opening them. I also reviewed the MIME structure and checked for conventional named file attachments.
 
-The source corpus retains some authentication results but does not preserve the complete mail-routing path. SPF, DKIM and DMARC are therefore reported only where the supplied headers contain an explicit result. MXToolbox Email Header Analyzer was used to review the available headers for all three samples. The authentication values below agree with the supplied source-header fields.
+I used [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx) to review the available headers for all three samples. I also attempted to use Google Admin Toolbox Messageheader, but it did not produce a usable analysis from the supplied corpus headers. I therefore used MXToolbox consistently for the three header assessments and have not attributed any results to Google's tool.
+
+The dataset does not preserve the complete original mail-routing path, including full `Received` and `Return-Path` information. I recorded SPF, DKIM and DMARC only where the supplied headers or MXToolbox output displayed a result. A missing result is treated as unavailable information, not as a failed authentication check.
 
 ## Tools and resources
 
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus) — source email samples
-- [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
-- Browser raw-text and HTML-source inspection
-- Microsoft Word / PDF — report and awareness document
-- GitHub — source references, analysis and evidence
+- [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx) — header analysis for all three samples
+- Browser-based raw email and HTML-source inspection
+- GitHub — source references, investigation notes and screenshots
+- Markdown — investigation, evidence register, awareness guide and report
 
 ## Repository structure
 
@@ -53,13 +55,13 @@ FUTURE_CS_02/
 
 ## Evidence and scope
 
-The repository links to the original dataset records and contains the investigation notes and selected evidence screenshots. The sample messages are drawn from a public corpus released under the MIT License; the project credits the dataset and links to each original record. The corpus README describes the messages as real-world samples with contributor information redacted and URLs defanged. The link review in this project was static; suspicious destinations were not opened.
+I saved the supporting screenshots in the evidence folder for each sample and listed them in the [evidence register](evidence/evidence-log.md). The analysis files link to the original corpus records rather than republishing the original `.eml` messages. I kept suspicious destinations in defanged form and reviewed them statically; I did not open the links.
 
-The source files contain limited routing information. In particular, complete `Received` and `Return-Path` details are unavailable in this corpus. Absence of a field is treated as unavailable evidence, not as an authentication failure.
+The corpus retains some sender and authentication information but does not provide a complete delivery route. Complete `Received` and `Return-Path` details are unavailable in the supplied records. The absence of a field is recorded as a limitation rather than an authentication failure.
 
-## Current project status
+## Project status
 
-The source selection and content investigations for all three samples are documented. Sample 01 and Sample 02 evidence records include captured sender/header, message-content, link and MXToolbox analysis screenshots. MXToolbox header analysis has been completed for all three samples, with the available SPF/DKIM results recorded in the corresponding analysis files; DMARC is recorded as unavailable where no result is shown. The full Sample 02 MIME/HTML source has also been reviewed, including its six HTML links and unrelated hidden/appended content. Sample 03 supporting screenshots remain to be added. The employee-awareness guide and report are drafted from the sample findings.
+I have completed the three sample investigations, captured and organised the available MXToolbox evidence, recorded the comparative classifications, and drafted the employee-awareness guide and final report in Markdown. I am now preparing the formatted Word/PDF deliverables and carrying out the final repository review before publication.
 
 ## References
 
