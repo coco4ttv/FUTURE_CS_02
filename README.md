@@ -1,4 +1,4 @@
-# Future Interns Cyber Security Internship — Task 2
+# Future Interns Cyber Security Internship - Task 2
 ## Phishing Email Detection & Awareness System
 
 I completed this project as part of the Future Interns Cyber Security Internship. I investigated three unsolicited email samples from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) dataset, assessed their sender identities and content, inspected the links in their HTML source, and reviewed the authentication information available in their headers. I used the findings to prepare individual sample assessments and an employee phishing-awareness guide.
@@ -13,9 +13,9 @@ I completed this project as part of the Future Interns Cyber Security Internship
 
 I explain the evidence behind each assessment in the individual investigation files:
 
-- [Sample 01 — Google / cloud-account alert](analysis/sample-01.md)
-- [Sample 02 — SiriusXM payment-failure email](analysis/sample-02.md)
-- [Sample 03 — Diabetes-treatment promotion](analysis/sample-03.md)
+- [Sample 01 - Google / cloud-account alert](analysis/sample-01.md)
+- [Sample 02 - SiriusXM payment-failure email](analysis/sample-02.md)
+- [Sample 03 - Diabetes-treatment promotion](analysis/sample-03.md)
 
 ## How I carried out the investigation
 
@@ -27,11 +27,11 @@ The dataset does not preserve the complete original mail-routing path, including
 
 ## Tools and resources
 
-- [cw-l/message-corpus](https://github.com/cw-l/message-corpus) — source email samples
-- [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx) — header analysis for all three samples
+- [cw-l/message-corpus](https://github.com/cw-l/message-corpus) - source email samples
+- [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx) - header analysis for all three samples
 - Browser-based raw email and HTML-source inspection
-- GitHub — source references, investigation notes and screenshots
-- Markdown — investigation, evidence register, awareness guide and report
+- GitHub - source references, investigation notes and screenshots
+- Markdown - investigation, evidence register, awareness guide and report
 
 ## Repository structure
 
@@ -65,6 +65,6 @@ I have completed the three sample investigations, captured and organised the ava
 
 ## References
 
-- [Future Interns — Cyber Security Task 2](https://futureinterns.com/)
+- [Future Interns - Cyber Security Task 2](https://futureinterns.com/)
 - [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
-- [MXToolbox — Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
+- [MXToolbox - Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)

@@ -1,8 +1,8 @@
 # Phishing Email Detection & Awareness System
-## Future Interns Cyber Security Internship — Task 2
+## Future Interns Cyber Security Internship - Task 2
 
 **Prepared by:** Samuel Evans-Adeluka  
-**Assessment date:** 13 November 2026  
+**Assessment date:** 18 November 2026  
 **Repository:** [FUTURE_CS_02](https://github.com/coco4ttv/FUTURE_CS_02)
 
 ## 1. Executive summary
@@ -37,9 +37,9 @@ I used MXToolbox to review the available headers for all three samples and recor
 
 ## 4. Sample findings
 
-### 4.1 Sample 01 — Google / Cloud Account Alert
+### 4.1 Sample 01 - Google / Cloud Account Alert
 
-**Classification: Phishing — High confidence**
+**Classification: Phishing - High confidence**
 
 The message uses Google-style branding and a “Support Team” identity, but the visible sender is `nooreply@csl.yusoilxyhryni.us`. The email combines a cloud-storage/account warning, a device-virus warning and a subscription-renewal demand. It uses fear-based language and a 48-hour deadline. Its primary links use the unexpected host `storage[.]googleapis[.]com`.
 
@@ -51,23 +51,23 @@ The MXToolbox output also displays an ARC set signed with `d=google.com`. This i
 
 Full analysis: [analysis/sample-01.md](../analysis/sample-01.md)
 
-### 4.2 Sample 02 — SiriusXM Payment-Failure Email
+### 4.2 Sample 02 - SiriusXM Payment-Failure Email
 
-**Classification: Phishing — High confidence**
+**Classification: Phishing - High confidence**
 
 The main visible HTML message claims a SiriusXM payment failed, says the subscription has been cancelled and threatens account removal and service suspension within 24 hours. It asks the recipient to update payment details. The visible sender domain `btjgbfyk.aroke.hugunenav.biz` does not match an evident SiriusXM domain. The payment action is linked through a Google Cloud Storage object URL, while the separate List-Unsubscribe header points to `bicobuluj.biz`.
 
 The complete raw message contains six HTML hyperlinks using the same hosted object URL with different fragment values. The message source also contains additional hidden or appended material unrelated to SiriusXM, including rental, software-demo, account-registration, newsletter, news/article and Parsec content, as well as credential-like strings that are not reproduced. This makes the MIME/HTML structure notably irregular. The primary visible SiriusXM message does match the subject; the unrelated material appears elsewhere in the message source.
 
-The supplied Authentication-Results record SPF pass for `aroke.hugunenav.biz`, with sending IP `129.121.93.85`, and DKIM pass for `btjgbfyk.aroke.hugunenav.biz`. The DKIM-Signature header specifies `rsa-sha1`. No DMARC result is shown. The SPF and DKIM passes indicate successful checks for the sending infrastructure shown; they do not establish that the message is from SiriusXM or validate its payment request. The message also contains a Google-signed ARC set, which does not establish that Google authored the original message.
+The supplied Authentication-Results record shows SPF pass for `aroke.hugunenav.biz`, with sending IP `129.121.93.85`, and DKIM pass for `btjgbfyk.aroke.hugunenav.biz`. The DKIM-Signature header specifies `rsa-sha1`. No DMARC result is shown. The SPF and DKIM passes indicate successful checks for the sending infrastructure shown; they do not establish that the message is from SiriusXM or validate its payment request. The message also contains a Google-signed ARC set, which does not establish that Google authored the original message.
 
 **Potential impact:** Disclosure of payment-card or account information if a recipient follows the payment-update request. The source also contains credential-like material, but no credential use or compromise is established.
 
 Full analysis: [analysis/sample-02.md](../analysis/sample-02.md)
 
-### 4.3 Sample 03 — Diabetes-Treatment Promotion
+### 4.3 Sample 03 - Diabetes-Treatment Promotion
 
-**Classification: Suspicious — Medium confidence**
+**Classification: Suspicious - Medium confidence**
 
 The email promotes a natural home remedy and claims that Type 2 diabetes can be reversed and A1C lowered in three hours. It uses fear-based wording about complications including nerve damage, blindness and amputations, and invites the recipient to click through to learn the advertised protocol. The captured body provides no study citation or clinical evidence for the claims. The primary link points to a Google Cloud Storage object under `storage[.]googleapis[.]com`; the HTML also references an image hosted at `i[.]imgur[.]com`. The List-Unsubscribe header points to `consigntix[.]com`.
 
@@ -92,25 +92,25 @@ Full analysis: [analysis/sample-03.md](../analysis/sample-03.md)
 
 A passing SPF or DKIM result is not, by itself, proof that a message is legitimate. The visible sender identity, claimed organisation, content and authentication alignment must be considered together.
 
-## 6. How the attacks work — simple explanation
+## 6. How the attacks work - simple explanation
 
 The three emails use different stories, but each tries to influence the recipient into taking an action before checking whether the message is genuine.
 
-### Sample 01 — Google / cloud account alert
+### Sample 01 - Google/cloud account alert
 
 The sender uses Google-style branding and a Support Team identity to make the email look familiar. It then warns about account or device problems and adds a deadline to create pressure. The aim is to make the recipient worry that access, files or a subscription are at risk and follow the links or renewal request without checking the sender first. The evidence shows an unexpected sender domain and hosted links. I did not open the links, so I cannot confirm what the pages would have asked the recipient to do.
 
-### Sample 02 — SiriusXM payment-failure email
+### Sample 02 - SiriusXM payment-failure email
 
 The email claims that a SiriusXM payment has failed and that the subscription will be removed unless the recipient updates payment details. This creates concern about losing a service and encourages the recipient to use the payment link in the message. A recipient who trusts the message could be taken to a page and persuaded to enter payment or account information. The sender domain does not match an evident SiriusXM domain, and the payment link uses a hosted Google Cloud Storage address. I did not open the destination, so the investigation does not establish what information the page collected or whether any information was stolen.
 
-### Sample 03 — Diabetes-treatment promotion
+### Sample 03 - Diabetes-treatment promotion
 
 This email uses a different approach. Instead of pretending to be an account provider, it makes dramatic health claims and promises a very quick result. It also mentions serious complications to make the reader feel worried and more likely to click the promotional link. The email provides no research citation to support its claims. The supplied evidence supports a suspicious health promotion, but it does not prove that the link delivered malware or collected credentials.
 
 ### What the examples have in common
 
-In simple terms, the sender gives the recipient a reason to react — fear of losing an account, concern about a payment, or hope of a quick health improvement — and then encourages them to click a link or take another action. The risk arises when the recipient trusts the story without checking it independently. The final destination and any activity after a click were not tested in this investigation.
+In simple terms, the sender gives the recipient a reason to react-fear of losing an account, concern about a payment, or hope of a quick health improvement -and then encourages them to click a link or take another action. The risk arises when the recipient trusts the story without independently verifying it. The final destination and any activity after a click were not tested in this investigation.
 
 ## 7. Prevention tips for users
 
@@ -119,7 +119,7 @@ The following steps help employees recognise suspicious messages and avoid actin
 1. **Pause before reacting.** Be careful with unexpected warnings, urgent deadlines, threats of account closure, payment problems and offers that promise unusually quick results.
 2. **Check the full sender address.** Do not rely on the display name, logo or sign-off. Look at the domain after the `@` symbol and consider whether it matches the organisation the email claims to represent.
 3. **Go to the organisation directly.** For account, security or payment messages, open the official app or type the organisation's known website address yourself. Check the account there instead of using the email's link.
-4. **Verify unexpected requests separately.** Contact the organisation using a phone number or contact method from its official website, card or previous trusted correspondence — not details supplied only in the suspicious email.
+4. **Verify unexpected requests separately.** Contact the organisation using a phone number or contact method from its official website, card or previous trusted correspondence - not details supplied only in the suspicious email.
 5. **Do not share sensitive information through unexpected links.** Do not enter passwords, one-time passcodes, banking details or payment-card information because an email asks you to.
 6. **Treat links and attachments carefully.** Check where a link is supposed to lead without opening it. Do not open unexpected attachments or download files when the sender or purpose is unclear.
 7. **Check surprising health and financial claims.** Do not rely on an unsolicited email for medical or financial decisions. Confirm health information with a qualified healthcare professional and use reputable, independent sources.
