@@ -1,9 +1,9 @@
-# Sample 02 — SiriusXM Payment-Failure Email
+# Sample 02 - SiriusXM Payment-Failure Email
 
 ## 1. Source details
 - Dataset: [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
 - Original filename: `03eb531b9a4b525a9247a4ca47c995fb31b2811ef558b33c969547ff653be878.eml`
-- Original source: [Sample 02 — original email](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/03eb531b9a4b525a9247a4ca47c995fb31b2811ef558b33c969547ff653be878.eml)
+- Original source: [Sample 02 - original email](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/03eb531b9a4b525a9247a4ca47c995fb31b2811ef558b33c969547ff653be878.eml)
 - Date: Thu, 01 Oct 2026 05:10:28 +0000
 
 ## 2. Email overview
@@ -68,7 +68,7 @@ I analysed the message headers using [MXToolbox Email Header Analyzer](https://m
 | Header check | Result | Observed detail |
 |---|---|---|
 | SPF | **Pass** | Envelope domain: `aroke.hugunenav.biz` |
-| SPF sending IP | — | `129.121.93.85` |
+| SPF sending IP | - | `129.121.93.85` |
 | DKIM | **Pass** | Signing domain: `btjgbfyk.aroke.hugunenav.biz` |
 | DMARC | Not displayed | No DMARC outcome is available in the captured result |
 | Return-Path | Not present in supplied corpus | The corpus removes routing headers |
