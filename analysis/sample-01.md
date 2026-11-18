@@ -1,9 +1,9 @@
-# Sample 01 — Google / Cloud Account Alert
+# Sample 01 -Google / Cloud Account Alert
 
 ## 1. Source details
 - Dataset: [cw-l/message-corpus](https://github.com/cw-l/message-corpus)
 - Original filename: `00448d97a6dde39113273dd71a4e9c3e60102dbbff5c2af266efc30a60ddbe01.eml`
-- Original source: [Sample 01 — original email](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/00448d97a6dde39113273dd71a4e9c3e60102dbbff5c2af266efc30a60ddbe01.eml)
+- Original source: [Sample 01 -original email](https://github.com/cw-l/message-corpus/blob/main/submissions/email/cd73657af8d9165a/1.0.0/00448d97a6dde39113273dd71a4e9c3e60102dbbff5c2af266efc30a60ddbe01.eml)
 - Date header: `03-31-2026` (as written in the source)
 
 ## 2. Email overview
@@ -51,17 +51,17 @@ The message uses Google-style branding with a sender domain unrelated to Google,
 **Recommended recipient action:** Do not follow the links or reply. Check any account alert by navigating independently to the genuine service and report the email through the organisation's security process.
 
 ## 9. Evidence captured
-- [`sender_info.png`](../evidence/sample-01/sender_info.png) — sender and available header information.
-- [`main_body_and_link.png`](../evidence/sample-01/main_body_and_link.png) — main Google-style message content and primary device-security link, with message-specific query values obscured.
+- [`sender_info.png`](../evidence/sample-01/sender_info.png) -sender and available header information.
+- [`main_body_and_link.png`](../evidence/sample-01/main_body_and_link.png) -main Google-style message content and primary device-security link, with message-specific query values obscured.
 
-## 10. Header analysis — MXToolbox
+## 10. Header analysis -MXToolbox
 
 I reviewed the headers using [MXToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx). The result shows:
 
 | Header check | Result | Observed detail |
 |---|---|---|
 | SPF | **Pass** | Envelope-sender domain: `pispszltq.voaxodovlpu.synrg.co.za` |
-| SPF sending IP | — | `95.173.180.123` |
+| SPF sending IP | -| `95.173.180.123` |
 | DKIM | No pass result displayed | The captured Authentication-Results row does not show a DKIM pass |
 | DMARC | No result displayed | No DMARC outcome can be concluded from this output |
 | Relay delay | 0 seconds displayed | The source corpus does not preserve the Received chain, so this display does not establish a complete delivery timeline |
