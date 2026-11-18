@@ -45,6 +45,8 @@ The message uses Google-style branding and a “Support Team” identity, but th
 
 The supplied Authentication-Results record SPF pass for the envelope-sender domain `pispszltq.voaxodovlpu.synrg.co.za`, with sending IP `95.173.180.123`. No DKIM pass or DMARC result is shown. The SPF pass does not authenticate the visible From identity as Google.
 
+The MXToolbox output also displays an ARC set signed with `d=google.com`. This identifies the signer of the ARC record added during mail handling; it does not establish that Google authored the original email. The analyser displays a relay delay of 0 seconds, but the source corpus does not preserve the Received chain needed to establish a complete delivery timeline.
+
 **Potential impact:** Disclosure of account or payment information or interaction with deceptive hosted content.
 
 Full analysis: [analysis/sample-01.md](../analysis/sample-01.md)
