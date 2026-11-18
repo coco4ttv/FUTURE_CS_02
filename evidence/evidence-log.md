@@ -29,6 +29,9 @@
 | Primary link destination | `sample-02/Link.png` | Captured in defanged form |
 | MXToolbox parsed headers | `sample-02/MX Toolbox output.png` | SPF and DKIM pass; DMARC result not displayed |
 | MXToolbox header summary | `sample-02/MX Toolbox output2.png` | Header analysed; no hop-by-hop relay path shown |
+| Complete MIME/HTML source review | [Sample 02 analysis](../analysis/sample-02.md) | Main SiriusXM message separated from unrelated hidden/appended content |
+| HTML link extraction | [Sample 02 analysis](../analysis/sample-02.md) | Six HTML hyperlinks identified; destinations retained in defanged form and not opened |
+| MIME structure review | [Sample 02 analysis](../analysis/sample-02.md) | Multiple HTML parts, differing charset declarations, hidden objects and unrelated appended message fragments recorded |
 
 ## Sample 03 — Diabetes-Treatment Promotion
 

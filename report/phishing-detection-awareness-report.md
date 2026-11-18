@@ -55,11 +55,13 @@ Full analysis: [analysis/sample-01.md](../analysis/sample-01.md)
 
 **Classification: Phishing — High confidence**
 
-The email claims a SiriusXM payment failed, states that the account will be removed and threatens service suspension within 24 hours. It asks the recipient to update payment details. The sender domain `btjgbfyk.aroke.hugunenav.biz` does not match an evident SiriusXM domain. The payment link uses `storage[.]googleapis[.]com`, and the unsubscribe host is `bicobuluj[.]biz`.
+The main visible HTML message claims a SiriusXM payment failed, says the subscription has been cancelled and threatens account removal and service suspension within 24 hours. It asks the recipient to update payment details. The visible sender domain `btjgbfyk.aroke.hugunenav.biz` does not match an evident SiriusXM domain. The payment action is linked through a Google Cloud Storage object URL, while the separate List-Unsubscribe header points to `bicobuluj.biz`.
 
-The supplied Authentication-Results record SPF pass for `aroke.hugunenav.biz`, with sending IP `129.121.93.85`, and DKIM pass for `btjgbfyk.aroke.hugunenav.biz`. No DMARC result is shown. These passes authenticate the relevant sending domain/signature; they do not establish that the message is from SiriusXM.
+The complete raw message contains six HTML hyperlinks using the same hosted object URL with different fragment values. The message source also contains additional hidden or appended material unrelated to SiriusXM, including rental, software-demo, account-registration, newsletter, news/article and Parsec content, as well as credential-like strings that are not reproduced. This makes the MIME/HTML structure notably irregular. The primary visible SiriusXM message does match the subject; the unrelated material appears elsewhere in the message source.
 
-**Potential impact:** Disclosure of payment-card or account information.
+The supplied Authentication-Results record SPF pass for `aroke.hugunenav.biz`, with sending IP `129.121.93.85`, and DKIM pass for `btjgbfyk.aroke.hugunenav.biz`. The DKIM-Signature header specifies `rsa-sha1`. No DMARC result is shown. The SPF and DKIM passes indicate successful checks for the sending infrastructure shown; they do not establish that the message is from SiriusXM or validate its payment request. The message also contains a Google-signed ARC set, which does not establish that Google authored the original message.
+
+**Potential impact:** Disclosure of payment-card or account information if a recipient follows the payment-update request. The source also contains credential-like material, but no credential use or compromise is established.
 
 Full analysis: [analysis/sample-02.md](../analysis/sample-02.md)
 
@@ -106,13 +108,13 @@ The repository includes source references and Sample 01 and Sample 02 investigat
 
 The source corpus does not preserve a complete mail-routing chain; in particular, `Received` and `Return-Path` information is unavailable. DMARC results are not shown in the supplied authentication fields. The absence of a result is not treated as a failed check.
 
-The embedded links were reviewed from the raw message source and were not opened. No live destination reputation check, credential theft, financial loss or malware execution is claimed. Sample 01 also contains unrelated concatenated MIME fragments; these are noted as a source-data anomaly and are not treated as part of the main Google-themed message.
+The embedded links were reviewed from the raw message sources and were not opened. No live destination reputation check, credential theft, financial loss or malware execution is claimed. Samples 01 and 02 each contain unrelated concatenated or hidden MIME/HTML content. These fragments are documented as source-content anomalies and are not treated as part of the main visible lure in either message.
 
 ## 8. Conclusion
 
 The three samples demonstrate different social-engineering approaches: impersonation and fear-based account warnings, payment pressure, and exaggerated health-product promotion. Two samples have sufficient indicators for a phishing classification, while the third is more appropriately recorded as suspicious on the available evidence.
 
-The investigation demonstrates why message content, sender identity, link context and authentication results must be assessed together. The remaining header-tool outputs and Sample 02/03 screenshots will complete the technical evidence record.
+The investigation demonstrates why message content, sender identity, link context and authentication results must be assessed together. MXToolbox header analysis is recorded for all three samples. Sample 02's full MIME/HTML source review is now included in its analysis, while Sample 03's supporting screenshots remain to be added.
 
 ## 9. References
 

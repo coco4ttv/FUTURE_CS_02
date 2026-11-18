@@ -59,7 +59,7 @@ The source files contain limited routing information. In particular, complete `R
 
 ## Current project status
 
-The source selection and content investigations for all three samples are documented. The Sample 01 evidence folder contains sender/header and main-body/primary-link screenshots. MXToolbox header analysis has been completed for all three samples, with the SPF/DKIM observations recorded in the corresponding analysis files. Sample 02 and Sample 03 email-content screenshots, along with the MXToolbox result images, are not yet included in the repository. The employee-awareness guide is drafted, and the final report is being developed from the sample findings.
+The source selection and content investigations for all three samples are documented. Sample 01 and Sample 02 evidence records include captured sender/header, message-content, link and MXToolbox analysis screenshots. MXToolbox header analysis has been completed for all three samples, with the available SPF/DKIM results recorded in the corresponding analysis files; DMARC is recorded as unavailable where no result is shown. The full Sample 02 MIME/HTML source has also been reviewed, including its six HTML links and unrelated hidden/appended content. Sample 03 supporting screenshots remain to be added. The employee-awareness guide and report are drafted from the sample findings.
 
 ## References
 
