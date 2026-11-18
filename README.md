@@ -1,7 +1,7 @@
 # Future Interns Cyber Security — Task 2
 ## Phishing Email Detection & Awareness System
 
-This project documents the investigation of three unsolicited email samples from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) dataset. The work examines sender identity, message content, link destinations and the authentication information retained in each sample. The investigation also develops practical phishing-awareness guidance for employees.
+This project documents an independent investigation of three unsolicited email samples from the public [cw-l/message-corpus](https://github.com/cw-l/message-corpus) dataset. The corpus maintainers describe it as a collection of real-world, redacted spam, scam and phishing messages intended for security research and awareness training. The work examines sender identity, message content, link destinations and the authentication information retained in each sample, then develops practical phishing-awareness guidance for employees. The corpus does not assign a definitive spam/scam/phishing subtype to each message; the classifications in this project are the analyst's assessments based on the evidence.
 
 ## Project findings
 
